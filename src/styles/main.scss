@@ -1,0 +1,19 @@
+// Base styles
+@import './_variables';
+@import './_mixins';
+@import './_reset';
+@import './_global';
+@import './_header';
+@import './_footer';
+@import './_logo';
+
+// Pages
+@import './_home';
+@import './_projects';
+@import './_contact';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}

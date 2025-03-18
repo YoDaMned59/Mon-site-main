@@ -1,0 +1,183 @@
+// Couleurs principales
+:root {
+  // Couleurs de base
+  --primary-color: #C4A484;
+  --primary-rgb: 196, 164, 132;
+  
+  --background-color: #0D1321;
+  --background-rgb: 13, 19, 33;
+  
+  --text-color: #F5F5F5;
+  --text-color-light: rgba(245, 245, 245, 0.7);
+  
+  --border-color: #3A3A3A;
+  --border-rgb: 58, 58, 58;
+
+  // Couleurs sémantiques
+  --success-color: #4CAF50;
+  --error-color: #f44336;
+  --warning-color: #ff9800;
+  --info-color: #2196f3;
+
+  // Dimensions
+  --header-height: 80px;
+  --footer-height: 60px;
+  --max-width: 1200px;
+  --border-radius: 8px;
+
+  // Transitions
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  // Z-index
+  --z-header: 1000;
+  --z-modal: 2000;
+  --z-tooltip: 3000;
+
+  // Ombres
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  // Espacement
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+}
+
+// Variables SCSS (pour la compatibilité)
+$color-primary: var(--primary-color);
+$color-background: var(--background-color);
+$color-text: var(--text-color);
+$color-text-light: var(--text-color-light);
+$color-border: var(--border-color);
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Espacement
+$spacing-xs: var(--spacing-xs);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);
+$spacing-2xl: 6rem;
+$spacing-3xl: 8rem;
+
+// Font sizes
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+$font-size-5xl: 3rem;      // 48px
+
+// Typographie
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-heading: $font-family;
+$font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', 'Courier New', monospace;
+
+// Mixins
+@mixin glassmorphism {
+  backdrop-filter: blur(10px);
+  background: rgba(var(--background-rgb), 0.8);
+  border: 1px solid rgba(var(--border-rgb), 0.1);
+}
+
+// Layout
+$max-width: var(--max-width);
+$header-height: var(--header-height);
+$footer-height: var(--footer-height);
+
+// Border radius
+$border-radius: var(--border-radius);
+$border-radius-sm: calc(var(--border-radius) * 0.5);
+$border-radius-lg: calc(var(--border-radius) * 2);
+
+// Transitions
+$transition-fast: var(--transition-fast);
+$transition-base: var(--transition-normal);
+$transition-slow: var(--transition-slow);
+
+// Z-index
+$z-index-header: var(--z-header);
+$z-index-modal: var(--z-modal);
+$z-index-tooltip: var(--z-tooltip);
+
+// Shadows
+$shadow-sm: var(--shadow-sm);
+$shadow-md: var(--shadow-md);
+$shadow-lg: var(--shadow-lg);
+
+// Responsive mixins
+@mixin responsive($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// Couleurs
+$color-secondary: #4f46e5;
+$color-accent: #f59e0b;
+
+$color-background-dark: #111827;
+$color-background-light: #f3f4f6;
+
+$color-text-muted: #6b7280;
+
+$color-success: #10b981;
+$color-error: #ef4444;
+$color-warning: #f59e0b;
+
+// Mixins pour le responsive
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// Spacing
+$spacing-2xl: 6rem;    // 96px
+$spacing-3xl: 8rem;    // 128px
+
+// Layout
+$max-width: 1200px;
+$header-height: 80px;
+$footer-height: 60px;
+
+// Border radius
+$border-radius: 0.5rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 1rem;
+
+// Transitions
+$transition-fast: 150ms;
+$transition-base: 300ms;
+$transition-slow: 500ms;
+
+// Z-index
+$z-index-header: 1000;
+$z-index-modal: 2000;
+$z-index-tooltip: 3000;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+$gradient-dark: linear-gradient(135deg, $color-background-dark 0%, darken($color-background-dark, 10%) 100%);
+$gradient-light: linear-gradient(135deg, $color-background-light 0%, lighten($color-background-light, 10%) 100%); 

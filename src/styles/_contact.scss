@@ -1,0 +1,246 @@
+.contact {
+  padding: $spacing-xl 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #000000, #1a0f3c);
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &::before {
+    background-image: radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+      radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0)),
+      radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0)),
+      radial-gradient(1px 1px at 80px 250px, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0)),
+      radial-gradient(1px 1px at 100px 300px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    animation: starRotate 100s linear infinite;
+  }
+
+  &::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at center, rgba(103, 58, 183, 0.3) 0%, rgba(63, 81, 181, 0.2) 40%, rgba(0, 0, 0, 0) 70%);
+  }
+  &__header {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: $spacing-2xl;
+  }
+
+  &__title {
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-md;
+    color: $color-text;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: rgba($color-text, 0.8);
+    line-height: 1.6;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;  /* Formulaire plus large que les informations */
+    gap: $spacing-2xl;
+    align-items: start;
+    justify-items: center;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;  /* Sur petits écrans, tout occupe toute la largeur */
+      gap: $spacing-xl;
+    }
+  }
+
+  /* Formulaire : taille indépendante */
+  &__form-container {
+    width: 100%;
+    max-width: 800px;  /* Formulaire plus large */
+    background: rgba($color-background-light, 0.02);
+    border-radius: $border-radius-lg;
+    padding: $spacing-xl;
+    @include glassmorphism;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba($color-text, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Info : taille indépendante et plus petite */
+  &__info-container {
+    width: 100%;
+    max-width: 500px;  /* Taille réduite des informations */
+    background: rgba($color-background-light, 0.02);
+    border-radius: $border-radius-lg;
+    padding: $spacing-xl;
+    @include glassmorphism;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba($color-text, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact__form-container:hover,
+  .contact__info-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Style du formulaire */
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+
+      label {
+        font-size: $font-size-sm;
+        font-weight: 500;
+        color: $color-text;
+      }
+
+      input,
+      textarea {
+        padding: $spacing-sm $spacing-md;
+        border: 1px solid rgba($color-text, 0.1);
+        border-radius: $border-radius;
+        background: rgba($color-background-light, 0.05);
+        color: $color-text;
+        font-size: $font-size-base;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $color-primary;
+          background: rgba($color-background-light, 0.1);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 150px; /* Agrandir la taille de la zone de texte */
+      }
+    }
+
+    .btn {
+      margin-top: $spacing-sm;
+    }
+
+    .form-success {
+      margin-top: $spacing-md;
+      padding: $spacing-sm;
+      background: rgba($color-success, 0.1);
+      color: $color-success;
+      border-radius: $border-radius;
+      text-align: center;
+    }
+
+    .form-error {
+      margin-top: $spacing-md;
+      padding: $spacing-sm;
+      background: rgba($color-error, 0.1);
+      color: $color-error;
+      border-radius: $border-radius;
+      text-align: center;
+    }
+  }
+
+  /* Style de la partie informations */
+  &__info-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    text-decoration: none;
+    color: $color-text;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateX(5px);
+
+      .contact__info-value {
+        color: $color-primary;
+      }
+    }
+
+    svg {
+      font-size: $font-size-xl;
+      color: $color-primary;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+    }
+  }
+
+  &__info-label {
+    font-size: $font-size-sm;
+    color: rgba($color-text, 0.6);
+  }
+
+  &__info-value {
+    font-size: $font-size-base;
+    color: $color-text;
+    transition: color 0.3s ease;
+  }
+
+  /* Section sociale */
+  &__social {
+    border-top: 1px solid rgba($color-text, 0.1);
+    padding-top: $spacing-xl;
+  }
+
+  &__social-title {
+    font-size: $font-size-lg;
+    color: $color-text;
+    margin-bottom: $spacing-md;
+  }
+
+  &__social-links {
+    display: flex;
+    gap: $spacing-md;
+  }
+
+  &__social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color-primary, 0.1);
+    color: $color-primary;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: $font-size-lg;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-text-light;
+    }
+  }
+}

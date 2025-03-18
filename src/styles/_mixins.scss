@@ -1,0 +1,67 @@
+// Effet de glassmorphisme
+@mixin glassmorphism {
+  backdrop-filter: blur(10px);
+  background: rgba($color-background-light, 0.05);
+  border: 1px solid rgba($color-text-light, 0.1);
+}
+
+// Animation de soulèvement au survol
+@mixin hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Media queries responsives
+@mixin responsive($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Conteneur avec largeur maximale
+@mixin container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// Grille responsive
+@mixin responsive-grid($min-width: 280px, $gap: $spacing-md) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+// Flexbox center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Texte tronqué avec ellipsis
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Animation de fade-in
+@mixin fade-in($duration: 0.3s) {
+  animation: fadeIn $duration ease-in;
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+} 

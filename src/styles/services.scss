@@ -1,0 +1,146 @@
+/* Service Page Style */
+.services {
+    padding: 80px;
+    background-color: #0D1321;
+    color: #BFA181;
+  
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  
+    &::before {
+      background-image: radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 80px 250px, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0)),
+        radial-gradient(1px 1px at 100px 300px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
+      background-repeat: repeat;
+      background-size: 300px 300px;
+      animation: starRotate 100s linear infinite;
+    }
+  
+    &::after {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse at center, rgba(103, 58, 183, 0.3) 0%, rgba(63, 81, 181, 0.2) 40%, rgba(0, 0, 0, 0) 70%);
+    }
+  }
+  
+  .services__header {
+    text-align: center;
+    margin-bottom: 40px;
+  
+    h1 {
+      font-size: 2.5rem;
+      color: #BFA181; /* Couleur utilisée dans 'projets' */
+    }
+  
+    p {
+      font-size: 1.1rem;
+      color: white;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+  
+  .services__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .service {
+    background: #0A1828;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #BFA181; /* Couleur du titre pour correspondre au design de 'projets' */
+    }
+  
+    p {
+      font-size: 1rem;
+      color: white;
+      margin-bottom: 20px;
+    }
+  
+    .service-btn {
+      padding: 12px 25px;
+      background-color: #0A1828; /* Utilisation de la couleur de fond de 'projets' */
+      color: #BFA181; /* Couleur du texte pour correspondre à la charte graphique */
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+  
+      &:hover {
+        background-color: #a07c5f; /* Couleur du bouton au survol en utilisant une teinte plus claire */
+      }
+    }
+  }
+  
+  .services__cta {
+    text-align: center;
+    margin-top: 50px;
+  
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #BFA181; /* Titre CTA avec la couleur de 'projets' */
+    }
+  
+    p {
+      font-size: 1.2rem;
+      color: white;
+    }
+  
+    .cta-btn {
+      padding: 15px 30px;
+      background-color: #0A1828; /* Couleur du bouton d'appel à l'action */
+      color: #BFA181;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #0A1828; /* Couleur du bouton au survol */
+      }
+    }
+  }
+  
+  .service-btn:hover,
+  .cta-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .services__header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom right, #000000, #1a0f3c);
+    z-index: -1;
+    opacity: 0.1;
+  }
+  

@@ -1,0 +1,124 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(var(--background-rgb), 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(var(--border-rgb), 0.1);
+
+  &__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__menu-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-color);
+      transition: transform 0.3s ease;
+    }
+
+    &.is-active {
+      span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__nav {
+    @media (max-width: 768px) {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      width: 100%;
+      height: calc(100vh - var(--header-height));
+      background: rgba(var(--background-rgb), 0.95);
+      backdrop-filter: blur(10px);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      
+      &.is-open {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+  }
+
+  &__nav-item {
+    opacity: 1;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    &:hover,
+    &.is-active {
+      color: var(--primary-color);
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+} 

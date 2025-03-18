@@ -1,0 +1,221 @@
+@import './variables';
+
+.home {
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  background: linear-gradient(to bottom right, #000000, #1a0f3c);
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &::before {
+    background-image: radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+      radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0)),
+      radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0)),
+      radial-gradient(1px 1px at 80px 250px, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0)),
+      radial-gradient(1px 1px at 100px 300px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    animation: starRotate 100s linear infinite;
+  }
+
+  &::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at center, rgba(103, 58, 183, 0.3) 0%, rgba(63, 81, 181, 0.2) 40%, rgba(0, 0, 0, 0) 70%);
+  }
+
+  .hero__content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-direction: row; 
+    gap: 20px;
+    z-index: 3; 
+    position: relative;
+    align-items: center; 
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+    }
+  
+@keyframes starRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+
+
+// Section À propos
+.about {
+  padding: $spacing-3xl 0;
+  background: $gradient-dark;
+
+  &__title {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-2xl;
+    align-items: center;
+
+    @include responsive(md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  &__text {
+    p {
+      margin-bottom: $spacing-md;
+      font-size: $font-size-lg;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: $spacing-lg;
+  }
+
+  &__stat {
+    text-align: center;
+    padding: $spacing-lg;
+    background: rgba($color-primary, 0.1);
+    border-radius: $border-radius-lg;
+    @include glassmorphism;
+
+    &-number {
+      display: block;
+      font-size: $font-size-3xl;
+      font-weight: 700;
+      color: $color-primary;
+      margin-bottom: $spacing-xs;
+    }
+
+    &-label {
+      font-size: $font-size-sm;
+      color: rgba($color-text, 0.8);
+    }
+    
+  }
+}
+
+// Section Compétences
+.skills {
+  padding: $spacing-3xl 0;
+
+  &__title {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-lg;
+  }
+
+  &__card {
+    padding: $spacing-lg;
+    background: rgba($color-background-light, 0.05);
+    border-radius: $border-radius-lg;
+    border: 1px solid rgba($color-primary, 0.1);
+    @include glassmorphism;
+    @include hover-lift;
+
+    &-title {
+      font-size: $font-size-xl;
+      margin-bottom: $spacing-md;
+      color: $color-primary;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-sm;
+  }
+
+  &__item {
+    font-size: $font-size-base;
+    color: rgba($color-text, 0.9);
+    padding: $spacing-xs $spacing-sm;
+    background: rgba($color-primary, 0.1);
+    border-radius: $border-radius-sm;
+    text-align: center;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+} 

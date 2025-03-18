@@ -1,0 +1,30 @@
+{
+  "socialLinks": [
+    {
+      "id": "github",
+      "name": "GitHub",
+      "url": "https://github.com/YoDaMned59",
+      "icon": "github",
+      "ariaLabel": "Visitez mon profil GitHub"
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/duviviersebastien/",
+      "icon": "linkedin",
+      "ariaLabel": "Connectez-vous avec moi sur LinkedIn"
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=61573940604104&locale=fr_FR",
+      "icon": "facebook",
+      "ariaLabel": "Suivez-moi sur Facebook"
+    }
+  ],
+  "contactInfo": {
+    "email": "sduviviertech@outlook.fr",
+    "phone": "+33 6 46 14 72 82",
+    "location": "Meteren, France"
+  }
+}

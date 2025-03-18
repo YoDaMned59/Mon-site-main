@@ -1,0 +1,36 @@
+{
+  "contactInfo": [
+    {
+      "type": "email",
+      "label": "Email",
+      "value": "sduviviertech@outlook.fr",
+      "link": "mailto:sduviviertech@outlook.fr"
+    },
+    {
+      "type": "phone",
+      "label": "Téléphone",
+      "value": "+33 6 46 14 72 82",
+      "link": "tel:+33646147282"
+    },
+    {
+      "type": "location",
+      "label": "Localisation",
+      "value": "Meteren, France",
+      "link": "https://goo.gl/maps/Meteren"
+    }
+  ],
+  "socialLinks": [
+    {
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/in/duviviersebastien/"
+    },
+    {
+      "platform": "github",
+      "url": "https://github.com/YoDaMned59"
+    },
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/profile.php?id=61573940604104&locale=fr_FR"
+    }
+  ]
+} 

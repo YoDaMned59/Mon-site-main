@@ -1,0 +1,98 @@
+@import 'variables';
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #fff;
+    background-color: #000;
+    font-family: 'Inter', sans-serif;
+}
+
+#root {
+    min-height: 100vh;
+    position: relative;
+}
+
+.app-content {
+    position: relative;
+    z-index: 1;
+}
+
+// Ajustement des couleurs pour la lisibilité sur fond sombre
+a {
+    color: #fff;
+    text-decoration: none;
+    
+    &:hover {
+        color: #8e44ad;
+    }
+}
+
+// Style pour les conteneurs de section
+.section-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+// Style pour les titres
+h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+// Style pour les boutons
+button {
+    background-color: rgba(142, 68, 173, 0.8);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: rgba(142, 68, 173, 1);
+        transform: translateY(-2px);
+    }
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background;
+}
+
+.main {
+  flex: 1;
+  padding-top: $header-height;
+  overflow-x: hidden;
+}
+
+// Animation de transition entre les pages
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s, transform 0.3s;
+} 
