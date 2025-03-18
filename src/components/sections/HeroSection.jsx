@@ -14,7 +14,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="hero__title">
-            Développeur <span>Full-Stack</span><br />
+            Développeur <span>Web</span><br />
             Créateur d'expériences numériques
           </h1>
           <p className="hero__subtitle">

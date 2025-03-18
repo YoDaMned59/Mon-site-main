@@ -1,7 +1,8 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import '../styles/services.scss'; // Assure-toi d'ajouter ce fichier pour le style
+import '../styles/services.scss';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   return (
@@ -41,13 +42,15 @@ const Services = () => {
             Je conçois des sites web modernes et adaptatifs. Grâce à ma maîtrise des technologies HTML, CSS et JavaScript, je crée des interfaces qui s'adaptent à tous les types d'appareils, que ce soit un ordinateur, une tablette ou un smartphone.
           </p>
           <p><strong>Bénéfices :</strong> Une expérience utilisateur optimale, quelle que soit la taille de l'écran.</p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="service-btn"
-          >
-            Demander un devis
-          </motion.button>
+          <Link to="/contact"> {/* Utilisation de Link pour la navigation */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="service-btn"
+            >
+              Demander un devis
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Service 2 */}
@@ -62,13 +65,15 @@ const Services = () => {
             En utilisant les dernières technologies front-end comme React, Sass, et Bootstrap, je développe des interfaces dynamiques et interactives. Je m'assure que chaque projet respecte les meilleures pratiques de développement.
           </p>
           <p><strong>Bénéfices :</strong> Des interfaces réactives, rapides et interactives, avec un code propre et maintenable.</p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="service-btn"
-          >
-            Demander un devis
-          </motion.button>
+          <Link to="/contact"> {/* Utilisation de Link pour la navigation */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="service-btn"
+            >
+              Demander un devis
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Service 3 */}
@@ -80,16 +85,18 @@ const Services = () => {
         >
           <h2>Intégration de maquettes</h2>
           <p>
-            Vous avez une maquette ? Je m'occupe de l'intégration HTML/CSS/JavaScript avec une attention particulière à la précision, aux détails et à l’optimisation des performances. Je garantis des pages web fidèle à vos designs.
+            Vous avez une maquette ? Je m'occupe de l'intégration HTML/CSS/JavaScript avec une attention particulière à la précision, aux détails et à l’optimisation des performances. Je garantis des pages web fidèles à vos designs.
           </p>
           <p><strong>Bénéfices :</strong> Un résultat fidèle à vos maquettes, avec des performances optimisées et un code SEO-friendly.</p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="service-btn"
-          >
-            Demander un devis
-          </motion.button>
+          <Link to="/contact"> {/* Utilisation de Link pour la navigation */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="service-btn"
+            >
+              Demander un devis
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Service 4 */}
@@ -104,13 +111,15 @@ const Services = () => {
             Je m'assure que vos pages se chargent rapidement en optimisant le code, les images, et en utilisant les bonnes pratiques comme le lazy loading et le minification des ressources. Un site rapide est essentiel pour le SEO et l'expérience utilisateur.
           </p>
           <p><strong>Bénéfices :</strong> Une navigation fluide, des pages web qui se chargent plus vite et une meilleure position dans les résultats de recherche.</p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="service-btn"
-          >
-            Demander un devis
-          </motion.button>
+          <Link to="/contact"> {/* Utilisation de Link pour la navigation */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="service-btn"
+            >
+              Demander un devis
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
 
@@ -129,14 +138,16 @@ const Services = () => {
         >
           N'hésitez pas à me contacter pour discuter de vos besoins et obtenir un devis personnalisé.
         </motion.p>
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="cta-btn"
-        >
-          Contactez-moi
-        </motion.button>
+        <Link to="/contact"> {/* Utilisation de Link pour la navigation */}
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+            className="cta-btn"
+          >
+            Contactez-moi
+          </motion.button>
+        </Link>
       </div>
     </motion.div>
   );
