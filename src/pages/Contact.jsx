@@ -59,15 +59,15 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        "service_lsyr9n9",
-        "template_v16ubxk",
+        "service_xkvzhvh",
+        "template_xwuna1s",
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message
         },
-        "j3KClCUAj9anQTH9k"
+        "BXDcz7k22yRhBmZY5"
       );
 
       setFormStatus({ isSubmitting: false, isSubmitted: true, error: null });
